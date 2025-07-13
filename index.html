@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>FitCoach Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PWA manifest y theme -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#6b219c">
+
+  <!-- Iconos -->
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="/icon-512.png" sizes="512x512" type="image/png">
+
+  <!-- TailwindCSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="/src/style.css" />
+
+  <!-- COMPONENTES (ordenados por dependencias) -->
+  <script src="/src/components/Dashboard.js" defer></script>
+  <script src="/src/components/MessagePreview.js" defer></script>
+  <script src="/src/components/Navbar.js" defer></script>
+  <script src="/src/components/StudentForm.js" defer></script>
+  <script src="/src/components/StudentList.js" defer></script>
+  <script src="/src/components/RoutineForm.js" defer></script>
+  <script src="/src/components/RoutineList.js" defer></script>
+  <script src="/src/components/NoteForm.js" defer></script>
+  <script src="/src/components/NotesList.js" defer></script>
+  <script src="/src/components/WhatsAppForm.js" defer></script>
+
+  <!-- UTILIDADES Y DB -->
+  <script src="/src/utils.js" defer></script>
+  <script src="/src/indexedDB.js" defer></script>
+
+  <!-- PÁGINAS -->
+  <script src="/src/pages/Home.js" defer></script>
+  <script src="/src/pages/StudentsPage.js" defer></script>
+  <script src="/src/pages/RoutinesPage.js" defer></script>
+  <script src="/src/pages/NotesPage.js" defer></script>
+  <script src="/src/pages/WhatsAppPage.js" defer></script>
+
+  <!-- MAIN (router y arranque) -->
+  <script src="/src/main.js" defer></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+  
+
+  <!-- Contenido principal -->
+  <div id="app" class="p-6"></div>
+  <div id="mobileHomeBtn" class="hidden md:block">🏠</div>
+  
+  <!-- Botón fijo de inicio -->
+  <button 
+    id="backToHomeBtn"
+    onclick="navigateTo('/')" 
+    class="fixed top-4 right-4 bg-purple-600 hover:bg-purple-700 text-white text-sm px-3 py-1 rounded shadow-md z-50 hidden">← Inicio</button>
+  <!-- Notificación tipo toast -->
+<div id="toast" class="fixed bottom-4 right-4 z-50 hidden bg-green-500 text-white px-4 py-2 rounded shadow-lg transition-opacity duration-300"></div>
+</body>
+</html>

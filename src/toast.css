@@ -1,0 +1,28 @@
+/* Toast notification styles */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  min-width: 180px;
+  max-width: 80vw;
+  z-index: 9999;
+  background: #22c55e; /* verde éxito */
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+}
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.toast.error {
+  background: #dc2626; /* rojo error */
+}
+.toast.info {
+  background: #2563eb; /* azul info */
+}
